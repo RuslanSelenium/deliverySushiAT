@@ -14,23 +14,31 @@ Then I verify "category1" category is displaying
 
 @cleardatabase @web
 Scenario: Verify the category creating  #a POSITIVE test case
-Given I am on "/#/Sushi" 
+Given I am on "/#/Categories" 
 When I add category "category1"
 Then I verify "category1" category is displaying
 	And I verify category "category" in the database
 
 @cleardatabase @web
 Scenario: Verify the category creating  #a NEGATIVE test case
-Given I am on "/#/Sushi" 
+Given I am on "/#/Categories" 
 When I add category ""
 Then I verify the error is displaying
 	And I verify category "category" is not in the database
 	
 @cleardatabase @web
 Scenario: Verify the category changing 
-Given I am on "/#/Sushi" 
+Given I am on "/#/Categories" 
 	And I put category "category1" in the database
 When I change "category1" with "category2"
 Then I verify "category2" category is displaying
-	And And I verify category "category1" is not in the database
+	And I verify category "category1" is not in the database
 	And I verify category "category2" in the database
+	
+@cleardatabase @web
+Scenario: Verify the category removing 
+Given I am on "/#/Categories" 
+	And I put category "category1" in the database
+When I remove category "category1"
+Then I verify "category1" category is not displaying
+	And I verify category "category1" is not in the database
