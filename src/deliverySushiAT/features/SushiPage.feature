@@ -54,7 +54,7 @@ Scenario Outline: Verify the products changing
 Given And I put category "category" in the database
 	And I put product "sushi1, pretty nice sushi, 200, 220, any.jpg, category" in the database
 When I am on "/#/Sushi"
-	And I change product "sushi1" with <product> <description> <price> <weight> <picture> <category>
+	And I change product "sushi1" with <product> <description> <price> <weight> <picture> in the <category>
 Then I verify product <product> <description> <price> <weight> <picture> <category> is displaying
 	And I verify product <product> <description> <price> <weight> <picture> <category> in the database
 	
@@ -67,6 +67,6 @@ Scenario: Verify the products removing
 Given And I put category "category" in the database
 	And I put product "sushi1, pretty nice sushi, 200, 220, any.jpg, category" in the database
 When I am on "/#/Sushi"
-	And I remove product "sushi1"
-Then I verify product "sushi1" is not displaying
+	And I remove product "sushi1" from the "category"
+Then I verify product "sushi1" in the "category" is not displaying
 	And I verify product "sushi1" is not in the database
