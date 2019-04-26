@@ -11,10 +11,11 @@ public class CategoryDefinitions{
 
 	protected CommonDefinitions definitions;
 	
-	WebElement categoryNameField = CommonDefinitions.browser.findElement(By.xpath("//input[@placeholder = 'категория']"));
+	WebElement categoryNameField = CommonDefinitions.browser.findElement(By.xpath("//input[@placeholder = 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ']"));
 	WebElement categoryAddButton = CommonDefinitions.browser.findElement(By.xpath("//button[@ng-click='addCategory()']"));
 	WebElement categorySaveButton = CommonDefinitions.browser.findElement(By.xpath("//button[@ng-click='saveChanges()']"));
-	
+
+	//TODO: Testing git
 	
 	public CategoryDefinitions(){
 		this.definitions = new CommonDefinitions();
@@ -48,7 +49,7 @@ public class CategoryDefinitions{
 	    removeCategoryButton.click();
 	    Thread.sleep(500);
 	    
-	    WebElement approveRemovingButton = CommonDefinitions.browser.findElement(By.xpath("//div[@class='modal-footer']/button[.='Да']"));
+	    WebElement approveRemovingButton = CommonDefinitions.browser.findElement(By.xpath("//div[@class='modal-footer']/button[.='пїЅпїЅ']"));
 	    approveRemovingButton.click();
 	    Thread.sleep(500);
 	}
