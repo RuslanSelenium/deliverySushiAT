@@ -15,8 +15,6 @@ public class CategoryDefinitions{
 	WebElement categoryAddButton = CommonDefinitions.browser.findElement(By.xpath("//button[@ng-click='addCategory()']"));
 	WebElement categorySaveButton = CommonDefinitions.browser.findElement(By.xpath("//button[@ng-click='saveChanges()']"));
 
-	//TODO: Testing git
-	
 	public CategoryDefinitions(){
 		this.definitions = new CommonDefinitions();
 	}
